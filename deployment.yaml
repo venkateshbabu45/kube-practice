@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: account-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: account-service
+    spec:
+      containers:
+        - name: account-service
+          image: 092390458462.dkr.ecr.us-east-1.amazonaws.com/account-service:latest
+          ports:
+            - containerPort: 80
